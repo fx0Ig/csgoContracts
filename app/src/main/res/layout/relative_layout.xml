@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <Button
+        android:id="@+id/purple"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/purple"
+        android:text="Purple" />
+
+    <Button
+        android:id="@+id/yellow"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@id/purple"
+        android:backgroundTint="@color/yellow"
+        android:text="yellow" />
+
+    <Button
+        android:id="@+id/black"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/purple"
+        android:layout_alignLeft="@id/purple"
+        android:background="@color/yellow"
+
+        android:text="Black" />
+
+    <Button
+        android:id="@+id/white"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/black"
+        android:layout_toEndOf="@id/black"
+        android:background="@color/yellow"
+        android:text="white" />
+
+    <Button
+        android:id="@+id/A"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@color/yellow"
+        android:text="A"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/B"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/A"
+        android:background="@color/yellow"
+        android:text="B"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/C"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/B"
+        android:background="@color/yellow"
+        android:text="C"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/D"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/A"
+        android:layout_below="@id/B"
+        android:background="@color/yellow"
+        android:text="D"
+        android:textSize="25sp" />
+
+
+</RelativeLayout>
