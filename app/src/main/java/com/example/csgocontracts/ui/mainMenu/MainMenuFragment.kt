@@ -18,7 +18,7 @@ class MainMenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMainMenuBinding.inflate(inflater)
         setUpListener()
         return binding.root
@@ -28,7 +28,7 @@ class MainMenuFragment : Fragment() {
         binding.openContract.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.mainMenuContainer, ContractFragment())
-                .addToBackStack("123")
+                .addToBackStack("432")
                 .commit()
         }
 
