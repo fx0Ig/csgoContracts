@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.csgocontracts.R
 import com.example.csgocontracts.data.ContractModel
+import com.example.csgocontracts.data.WeaponForContractModel
+import com.example.csgocontracts.data.WeaponModel
 import com.example.csgocontracts.databinding.ConsraintLayoutBinding
 import com.example.csgocontracts.databinding.ContractLayoutBinding
 import com.example.csgocontracts.extensions.toDollars
@@ -15,12 +17,17 @@ import com.example.csgocontracts.extensions.toDollars
 class ContractFragment : Fragment() {
     private var _binding: ContractLayoutBinding? = null
     private val binding get() = _binding!!
-    val contractModel = ContractModel(1, "AWP-Dragon Lore", R.drawable.dragon_lore, 27000f)
+    val contractModel = ContractModel(
+        WeaponModel(1, "AWP-Dragon Lore", R.drawable.dragon_lore),
+        27000f, listOf(
+            WeaponForContractModel(WeaponModel(1, "m4a1s-Knight",R.drawable.knight), 0.6f)
+        )
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = ContractLayoutBinding.inflate(inflater)
         setUpListener()
         fillViewWithData(contractModel)
@@ -28,10 +35,14 @@ class ContractFragment : Fragment() {
     }
 
     fun fillViewWithData(model: ContractModel) {
-        binding.contractName.text = model.name
-        binding.contractPicture.setImageResource(contractModel.pictureId)
+        binding.contractName.text = model.weaponToCraft.name
+        binding.contractPicture.setImageResource(contractModel.weaponToCraft.picture)
         binding.priceOfContract.text =
             resources.getString(R.string.craft_price, model.priceOfContract.toDollars())
+    }
+
+    fun fillWeaponData(weaponList: List<WeaponForContractModel>) {
+
     }
 
     private fun setUpListener() {
